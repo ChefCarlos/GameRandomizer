@@ -1,11 +1,9 @@
 import java.sql.*;
 
-public class AccessDatabase {
-    public static void main(String[] args) {
+class AccessDatabase {
 
-    }
     private Connection con;
-    Statement stmt;
+    private Statement stmt;
     private ResultSet rs;
 
     AccessDatabase(){
@@ -31,7 +29,7 @@ public class AccessDatabase {
         }
     }
 
-    public String getRs() {
+    String getRs() {
         pickNewGame();
         try {
             if (rs.next()) {

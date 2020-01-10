@@ -1,8 +1,5 @@
 import javax.swing.*;
-import javax.swing.text.JTextComponent;
 import java.awt.*;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class UserInterface extends JFrame {
     public static void main(String[] args) {
@@ -22,13 +19,17 @@ public class UserInterface extends JFrame {
     }
 
     private void populateFrame(){
-        JLabel title = new JLabel("Add your steam profile Link below and it will choose a random game",SwingConstants.CENTER);
+        JLabel title = new JLabel("Add your steam username below and it will choose a random game",SwingConstants.CENTER);
         JTextField steamID = new JTextField();
         JButton importGames = new JButton("Import");
         JLabel blank = new JLabel();
         JLabel gameTitle = new JLabel("",SwingConstants.CENTER);
         JButton randomize = new JButton("Randomize");
 
+        importGames.addActionListener(e ->{
+                WebScrape scraper = new WebScrape(steamID.getText());
+                }
+        );
         randomize.addActionListener(e ->
                 gameTitle.setText(access.getRs())
         );

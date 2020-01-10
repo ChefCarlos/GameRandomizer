@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c98241c-1735-4fed-91b0-95d62ddc33e2" name="Default Changelist" comment="" />
+    <list default="true" id="0c98241c-1735-4fed-91b0-95d62ddc33e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameRandomizer/AccessDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameRandomizer/AccessDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccessDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccessDatabase.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,28 +24,56 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="java" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="256" />
+          <entry key="java" value="1307" />
+          <entry key="txt" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="256" />
+          <entry key="JAVA" value="1307" />
+          <entry key="PLAIN_TEXT" value="40" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AccessDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#1143#1144#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,12 +89,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/AccessDatabase.java" />
+        <option value="$PROJECT_DIR$/src/UserInterface.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="368" />
-    <option name="y" value="-15" />
+    <option name="x" value="-176" />
+    <option name="y" value="-9" />
     <option name="width" value="1936" />
     <option name="height" value="1016" />
   </component>
@@ -82,6 +116,11 @@
               <item name="GameRandomizer" type="b2602c69:ProjectViewProjectNode" />
               <item name="GameRandomizer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GameRandomizer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GameRandomizer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -89,7 +128,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578646798728" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578650527821" />
     <property name="last_opened_file_path" value="D:/Stuff to switch back/Year2Uni/CE201" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -106,7 +145,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.UserInterface">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -115,6 +154,14 @@
     </configuration>
     <configuration name="AccessDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AccessDatabase" />
+      <module name="GameRandomizer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UserInterface" />
       <module name="GameRandomizer" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -150,8 +197,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AccessDatabase" />
+      <item itemvalue="Application.UserInterface" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserInterface" />
         <item itemvalue="Application.AccessDatabase" />
       </list>
     </recent_temporary>
@@ -167,12 +219,21 @@
       <option name="presentableId" value="Default" />
       <updated>1578645342491</updated>
     </task>
+    <task id="LOCAL-00001" summary="Successfully Collected information from the database">
+      <created>1578647685802</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578647685802</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -181,7 +242,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32952183" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32952183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -205,13 +266,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Successfully Connected to local database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Successfully Connected to local database" />
+    <MESSAGE value="Successfully Collected information from the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Successfully Collected information from the database" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/AccessDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="108" selection-start-line="14" selection-start-column="108" selection-end-line="14" selection-end-column="108" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#1143#1144#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

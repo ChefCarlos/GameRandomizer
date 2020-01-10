@@ -5,6 +5,7 @@ public class AccessDatabase {
 
     }
     private Connection con;
+    Statement stmt;
     private ResultSet rs;
 
     AccessDatabase(){
@@ -24,19 +25,30 @@ public class AccessDatabase {
 
     private void collectData(){
         try {
-            Statement stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM game");
-//            while (rs.next()){
-//                int id = rs.getInt("id");
-//                String name = rs.getString("name");
-//                System.out.println(id + " " + name);
-//            }
+            stmt = con.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public ResultSet getRs() {
-        return rs;
+    public String getRs() {
+        pickNewGame();
+        try {
+            if (rs.next()) {
+                return rs.getString("name");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    private void pickNewGame(){
+        try {
+            rs = stmt.executeQuery("SELECT * FROM game ORDER BY RAND() LIMIT 1;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,16 +1,20 @@
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
 import java.awt.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class UserInterface extends JFrame {
     public static void main(String[] args) {
-        //AccessDatabase access = new AccessDatabase();
-        UserInterface ui = new UserInterface();
-
+        AccessDatabase access = new AccessDatabase();
+        UserInterface ui = new UserInterface(access);
     }
 
-    UserInterface(){
+    private AccessDatabase access;
+
+    UserInterface(AccessDatabase access){
         super("Game Randomizer");
+        this.access = access;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(500,300);
         setLayout(new GridLayout(6,1));
@@ -24,6 +28,12 @@ public class UserInterface extends JFrame {
         JLabel blank = new JLabel();
         JLabel gameTitle = new JLabel("",SwingConstants.CENTER);
         JButton randomize = new JButton("Randomize");
+
+        randomize.addActionListener(e ->
+                gameTitle.setText(access.getRs())
+        );
+
+
         add(title);
         add(steamID);
         add(importGames);
@@ -32,4 +42,10 @@ public class UserInterface extends JFrame {
         add(randomize);
         setVisible(true);
     }
+
+
+
+
+
+
 }

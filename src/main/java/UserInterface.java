@@ -9,6 +9,7 @@ public class UserInterface extends JFrame {
 
     private AccessDatabase access;
 
+    //Creation of user interface
     UserInterface(AccessDatabase access){
         super("Game Randomizer");
         this.access = access;
@@ -18,6 +19,7 @@ public class UserInterface extends JFrame {
         populateFrame();
     }
 
+    //adds all elements of the UI to the jframe
     private void populateFrame(){
         JLabel title = new JLabel("Add your steamID64 below and it will choose a random game from your library",SwingConstants.CENTER);
         JTextField steamID = new JTextField();
@@ -26,10 +28,13 @@ public class UserInterface extends JFrame {
         JLabel gameTitle = new JLabel("",SwingConstants.CENTER);
         JButton randomize = new JButton("Randomize");
 
+        //calls  SteamAPI using the steamid user has placed into text box upon pressing import button
         importGames.addActionListener(e ->{
                 new SteamAPI(steamID.getText());
                 }
         );
+
+        //calls AccessDatabase to add picked game to text box upon pressing button
         randomize.addActionListener(e ->
                 gameTitle.setText(access.getRs())
         );

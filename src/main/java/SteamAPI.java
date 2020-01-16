@@ -8,16 +8,16 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-public class SteamAPI {
+class SteamAPI {
 
-    private String apiKey;
     private String link;
-    JSONObject jsonObject;
+    private JSONObject jsonObject;
 
+    //starts the process of getting the link and starting to collect the ids to be placed into the database
     SteamAPI(String id){
         Dotenv dotenv = Dotenv.load();
-        apiKey = dotenv.get("STEAMAPIKEY");
-        link = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key="+apiKey+"&steamid="+ id+"&format=json";
+        String apiKey = dotenv.get("STEAMAPIKEY");
+        link = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key="+ apiKey +"&steamid="+ id+"&format=json";
 
         try {
             jsonObject = importData();
@@ -28,6 +28,7 @@ public class SteamAPI {
         getIDs();
     }
 
+    //used to read each line of json, to be placed into a stringbuilder that is returned as string
     private String readJson(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int line;
@@ -37,6 +38,7 @@ public class SteamAPI {
         return sb.toString();
     }
 
+    //gets the json from the url provided and places it into a jsonobject
     private JSONObject importData() throws IOException, JSONException {
         InputStream is = new URL(link).openStream();
         try {
@@ -49,6 +51,7 @@ public class SteamAPI {
         }
     }
 
+    //goes through the json object and gets the id of all the games
     private ArrayList getIDs(){
         ArrayList idList = new ArrayList<String>();
         try {

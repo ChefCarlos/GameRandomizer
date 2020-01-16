@@ -1,3 +1,5 @@
+package main.java;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -27,7 +29,7 @@ public class UserInterface extends JFrame {
         JButton randomize = new JButton("Randomize");
 
         importGames.addActionListener(e ->{
-                WebScrape scraper = new WebScrape(steamID.getText());
+                //WebScrape scraper = new WebScrape(steamID.getText());
                 }
         );
         randomize.addActionListener(e ->

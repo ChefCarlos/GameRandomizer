@@ -1,5 +1,3 @@
-package main.java;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -21,7 +19,7 @@ public class UserInterface extends JFrame {
     }
 
     private void populateFrame(){
-        JLabel title = new JLabel("Add your steam username below and it will choose a random game",SwingConstants.CENTER);
+        JLabel title = new JLabel("Add your steamID64 below and it will choose a random game from your library",SwingConstants.CENTER);
         JTextField steamID = new JTextField();
         JButton importGames = new JButton("Import");
         JLabel blank = new JLabel();
@@ -29,7 +27,7 @@ public class UserInterface extends JFrame {
         JButton randomize = new JButton("Randomize");
 
         importGames.addActionListener(e ->{
-                //WebScrape scraper = new WebScrape(steamID.getText());
+                new SteamAPI(steamID.getText());
                 }
         );
         randomize.addActionListener(e ->

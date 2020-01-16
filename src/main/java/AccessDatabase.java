@@ -1,6 +1,6 @@
-package main.java;
-
 import java.sql.*;
+import java.util.ArrayList;
+
 import io.github.cdimascio.dotenv.Dotenv;
 
 class AccessDatabase {
@@ -56,5 +56,13 @@ class AccessDatabase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void addToDatabase(ArrayList listToAdd){
+
+    }
+
+    public void wipeDatabase(){
+
     }
 }

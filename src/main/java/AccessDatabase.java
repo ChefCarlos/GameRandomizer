@@ -1,5 +1,6 @@
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
@@ -45,12 +46,29 @@ class AccessDatabase {
     }
 
 
+    //adds all ids and names to the database
+    void addToDatabase(HashMap<String, String> gamesToAdd){
+        wipeDatabase();
+        String yes;
+        for (Map.Entry<String,String> entry: gamesToAdd.entrySet()){
+            try {
+                yes = entry.getValue().replaceAll("'", "");
 
-    public void addToDatabase(ArrayList listToAdd){
-
+                stmt.executeUpdate("INSERT INTO game VALUES ('"+ entry.getKey()+"', '"+yes+"');");
+            } catch (SQLException e) {
+                System.out.println("replacing "+ entry.getValue());
+                e.printStackTrace();
+            }
+        }
     }
 
-    public void wipeDatabase(){
+    //clears the database for new entries to be added
+    private void wipeDatabase(){
+        try {
+            stmt.executeUpdate("DELETE FROM game WHERE id>1");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 }

@@ -4,13 +4,13 @@ import java.awt.*;
 public class UserInterface extends JFrame {
     public static void main(String[] args) {
         AccessDatabase access = new AccessDatabase();
-        UserInterface ui = new UserInterface(access);
+        new UserInterface(access);
     }
 
     private AccessDatabase access;
 
     //Creation of user interface
-    UserInterface(AccessDatabase access){
+    private UserInterface(AccessDatabase access){
         super("Game Randomizer");
         this.access = access;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -28,9 +28,10 @@ public class UserInterface extends JFrame {
         JLabel gameTitle = new JLabel("",SwingConstants.CENTER);
         JButton randomize = new JButton("Randomize");
 
-        //calls  SteamAPI using the steamid user has placed into text box upon pressing import button
+        //calls SteamAPI using the steamid user has placed into text box upon pressing import button
         importGames.addActionListener(e ->{
-                new SteamAPI(steamID.getText());
+                SteamAPI apiReader = new SteamAPI();
+                access.addToDatabase(apiReader.initialiseReader(steamID.getText()));
                 }
         );
 

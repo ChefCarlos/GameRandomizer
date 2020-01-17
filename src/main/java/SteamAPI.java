@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 class SteamAPI {
 
@@ -14,10 +14,10 @@ class SteamAPI {
     private JSONObject jsonObject;
 
     //starts the process of getting the link and starting to collect the ids to be placed into the database
-    SteamAPI(String id){
+    HashMap<String,String> initialiseReader(String id){
         Dotenv dotenv = Dotenv.load();
         String apiKey = dotenv.get("STEAMAPIKEY");
-        link = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key="+ apiKey +"&steamid="+ id+"&format=json";
+        link = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key="+ apiKey +"&steamid="+ id+"&include_appinfo=true&format=json";
 
         try {
             jsonObject = importData();
@@ -25,7 +25,7 @@ class SteamAPI {
             System.out.println("Invalid ID");
             e.printStackTrace();
         }
-        getIDs();
+        return getGames();
     }
 
     //used to read each line of json, to be placed into a stringbuilder that is returned as string
@@ -51,17 +51,17 @@ class SteamAPI {
         }
     }
 
-    //goes through the json object and gets the id of all the games
-    private ArrayList getIDs(){
-        ArrayList idList = new ArrayList<String>();
+    //goes through the json object and gets the id and names of all the games placed into a hashmap
+    private HashMap<String,String> getGames(){
+        HashMap<String, String> gameMap = new HashMap<>();
         try {
             JSONArray gameList = jsonObject.getJSONObject("response").getJSONArray("games");
             System.out.println(gameList.length() + " Games Found");
             for(int i = 0; i<gameList.length();i++)
-                idList.add(gameList.getJSONObject(i).get("appid"));
+                gameMap.put(gameList.getJSONObject(i).get("appid").toString(),gameList.getJSONObject(i).get("name").toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return idList;
+        return gameMap;
     }
 }
